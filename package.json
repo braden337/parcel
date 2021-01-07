@@ -1,5 +1,5 @@
 {
-  "name": "parcel-starter",
+  "name": "your-new-project",
   "version": "1.0.0",
   "description": "",
   "license": "MIT",
@@ -12,7 +12,7 @@
     "dist": "run-s clean build",
     "gh-pages": "gh-pages -d dist",
     "netlify": "netlify deploy -p -d dist",
-    "surge": "surge -d https://parcel-starter.surge.sh dist",
+    "surge": "surge -d https://your-new-project.surge.sh dist",
     "deploy": "run-s dist surge",
     "archive": "git archive -o latest.zip HEAD",
     "zip": "run-s clean archive",
