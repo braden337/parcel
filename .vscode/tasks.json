@@ -2,9 +2,9 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "run javascript file",
+      "label": "start",
       "type": "shell",
-      "command": "node ${file}",
+      "command": "npm start",
       "presentation": {
         "focus": true,
         "clear": true
