@@ -1,23 +1,32 @@
 {
+  "name": "parcel-starter",
+  "version": "1.0.0",
+  "description": "",
+  "license": "MIT",
   "scripts": {
-    "clean": "rimraf .cache dist/*",
-    "watch": "parcel watch src/index.html",
-    "serve": "browser-sync dist",
+    "clean": "rimraf dist/* *.zip",
+    "watch": "parcel watch src/index.html --no-hmr",
+    "serve": "browser-sync dist --files dist",
     "dev": "run-p watch serve",
     "build": "parcel build src/index.html --public-url ./",
-    "publish": "gh-pages -d dist",
-    "deploy": "run-s clean build publish",
-    "start": "run-s clean build dev"
+    "dist": "run-s clean build",
+    "gh-pages": "gh-pages -d dist",
+    "netlify": "netlify deploy -p -d dist",
+    "surge": "surge -d https://parcel-starter.surge.sh dist",
+    "deploy": "run-s dist surge",
+    "archive": "git archive -o latest.zip HEAD",
+    "zip": "run-s clean archive",
+    "start": "run-s dist dev"
   },
   "devDependencies": {
     "browser-sync": "^2.26.13",
-    "dayjs": "^1.10.2",
     "gh-pages": "^3.1.0",
-    "lodash": "^4.17.20",
+    "netlify-cli": "^2.70.0",
     "normalize.css": "^8.0.1",
     "npm-run-all": "^4.1.5",
     "parcel-bundler": "^1.12.4",
     "rimraf": "^3.0.2",
-    "sass": "^1.32.0"
+    "sass": "^1.32.0",
+    "surge": "^0.21.7"
   }
 }
