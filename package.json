@@ -13,7 +13,8 @@
     "gh-pages": "gh-pages -d dist",
     "netlify": "netlify deploy -p -d dist",
     "surge": "surge -d https://your-new-project.surge.sh dist",
-    "deploy": "run-s dist surge",
+    "publish": "run-s netlify",
+    "deploy": "run-s dist publish",
     "archive": "git archive -o latest.zip HEAD",
     "zip": "run-s clean archive",
     "start": "run-s dist dev"
