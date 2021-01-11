@@ -23,22 +23,7 @@ npm start
 
 ## Deployment
 
-You can deploy to any of these services:
-
-- [Netlify](https://netlify.com) (default)
-- [Surge](https://surge.sh)
-- [GitHub Pages](https://pages.github.com)
-
-You just need to change one of the `publish` npm script in your `package.json`
-
-| Service      | Command                      |
-| ------------ | ---------------------------- |
-| Netlify      | run-s netlify                |
-| Surge        | run-s surge                  |
-| GitHub Pages | run-s gh-pages               |
-| Multiple     | run-s netlify surge gh-pages |
-
-and then run the command
+You can deploy with your [Netlify](https://netlify.com) account by running
 
 ```shell
 npm run deploy

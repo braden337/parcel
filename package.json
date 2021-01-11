@@ -1,31 +1,23 @@
 {
-  "name": "your-new-project",
+  "name": "my-project",
   "version": "1.0.0",
   "description": "",
-  "license": "MIT",
   "scripts": {
     "clean": "rimraf dist/* *.zip",
-    "watch": "parcel watch src/index.html --no-hmr",
-    "serve": "browser-sync dist --files dist",
-    "dev": "run-p watch serve",
+    "dev": "parcel src/index.html",
     "build": "parcel build src/index.html --public-url ./",
     "dist": "run-s clean build",
-    "gh-pages": "gh-pages -d dist",
     "netlify": "netlify deploy -p -d dist",
-    "surge": "surge -d https://your-new-project.surge.sh dist",
     "publish": "run-s netlify",
     "deploy": "run-s dist publish",
-    "archive": "git archive -o latest.zip HEAD",
+    "archive": "git archive -o latest.zip HEAD -9",
     "zip": "run-s clean archive",
-    "start": "run-s dist dev"
+    "start": "run-s clean dev"
   },
   "devDependencies": {
-    "browser-sync": "^2.26.13",
-    "gh-pages": "^3.1.0",
     "netlify-cli": "^2.70.0",
     "npm-run-all": "^4.1.5",
     "parcel-bundler": "^1.12.4",
-    "rimraf": "^3.0.2",
-    "surge": "^0.21.7"
+    "rimraf": "^3.0.2"
   }
 }
